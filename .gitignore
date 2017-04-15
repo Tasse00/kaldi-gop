@@ -8,3 +8,4 @@ egs/gop-compute/input
 egs/gop-compute/waves_yesno
 egs/gop-compute/*.gz
 *.1
+run_mardain.sh

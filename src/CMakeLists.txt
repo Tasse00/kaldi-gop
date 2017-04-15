@@ -11,6 +11,7 @@ add_definitions(-Wno-deprecated-declarations)
 include_directories("${KALDI_ROOT}/src")
 include_directories("${KALDI_ROOT}/tools/openfst/include")
 include_directories("${KALDI_ROOT}/tools/ATLAS/include")
+find_package(Threads)
 
 # gop
 include_directories(".")
@@ -35,5 +36,8 @@ target_link_libraries(gop /usr/lib/liblapack_atlas.so.3)
 # compute-gmm-gop
 add_executable(compute-gmm-gop gopbin/compute-gmm-gop.cc)
 target_link_libraries(compute-gmm-gop gop)
-find_package(Threads)
 target_link_libraries(compute-gmm-gop ${CMAKE_THREAD_LIBS_INIT})
+
+add_executable(gop-wrapper-test gopbin/gop-wrapper-test.cc)
+target_link_libraries(gop-wrapper-test gop)
+target_link_libraries(gop-wrapper-test ${CMAKE_THREAD_LIBS_INIT})
