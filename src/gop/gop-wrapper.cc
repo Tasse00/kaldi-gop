@@ -22,7 +22,7 @@ Gop::Gop() {
 }
 
 Gop::~Gop() {
-  delete static_cast<Gop *>(impl_);
+  // delete static_cast<Gop *>(impl_);
   impl_ = NULL;
 }
 
@@ -36,7 +36,7 @@ void Gop::Compute(std::string &wav_filename, std::string text_string) {
   impl->Compute(wav_filename, text_string);
 }
 
-std::vector<float>& Gop::Result() {
+std::vector<std::pair<std::string, float> >& Gop::Result() {
   GopImpl *impl = static_cast<GopImpl *>(impl_);
   return impl->Result();
 }

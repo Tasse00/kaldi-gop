@@ -42,5 +42,9 @@ int main(int argc, char *argv[]) {
   gop.Compute(wav_filename, text_string);
   auto result = gop.Result();
 
+  for (size_t i = 0; i < result.size(); i++) {
+    cout << result[i].first << "\t" << result[i].second << endl;
+  }
+
   return 0;
 }

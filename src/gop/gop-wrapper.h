@@ -26,7 +26,7 @@ public:
   ~Gop();
   void Init(std::string &model_pathname);
   void Compute(std::string &wav_filename, std::string text_string);
-  std::vector<float>& Result();
+  std::vector<std::pair<std::string, float> >& Result();
 
 private:
   void *impl_;
