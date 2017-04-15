@@ -33,7 +33,8 @@ int main(int argc, char *argv[]) {
 
   string model_pathname(argv[1]);
   string wav_filename(argv[2]);
-  string text_string(argv[3]);
+  // string text_string(argv[3]);
+  string text_string("道教 的 创始人 是谁");
 
   Gop gop;
   gop.Init(model_pathname);

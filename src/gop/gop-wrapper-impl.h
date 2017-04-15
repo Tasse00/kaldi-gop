@@ -27,6 +27,11 @@ public:
   void Init(std::string &model_pathname);
   void Compute(std::string &wav_filename, std::string text_string);
   std::vector<float>& Result();
+
+private:
+  kaldi::GmmGop gmmgop_;
+  fst::SymbolTable *word_syms_;
+  std::vector<float> result_;
 };
 
 #endif  // KALDI_GOP_WRAPPER_IMPL_H_
